@@ -85,7 +85,7 @@ ruby -run -e httpd -- -p 8000
 python -m SimpleHTTPServer
 ```
 
-## Chack Module
+## Check Module
 
 Add to the body tag of Index.html
 
