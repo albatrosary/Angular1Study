@@ -1,5 +1,13 @@
 # Angular1 Study
 
+Branch
+* master: Install essential libraries
+* step2: Directive
+* step3: Install essential other libraries
+* step4: Routing(ngRoute)
+* step5: Todos
+* step6: Ajax
+
 ## Create a project folder
 
 ```bash
