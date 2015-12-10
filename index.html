@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <title>Angular1 Study</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
-<body ng-app>
+<body ng-app="TodoApp">
   <!-- contents -->
-  
+  <div ng-include="'components/header/header.html'"></div>
+  <div class="container">
+    <div ng-view></div>
+  </div>
   <!-- package -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -16,6 +20,8 @@
   <script src="node_modules/angular-resource/angular-resource.min.js"></script>
   
   <!-- module -->
-  
+  <script src="scripts/main.js"></script>
+  <script src="components/home/home.js"></script>
+  <script src="components/todo/todo.js"></script>
 </body>
 </html>
