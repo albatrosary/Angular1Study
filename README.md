@@ -66,7 +66,7 @@ or
 
 ```html
 <!-- contents -->
-<div ng-include="'header.html'"></div>
+<div ng-include="'components/header/header.html'"></div>
 
 <!-- package -->
 ```
@@ -104,6 +104,11 @@ body {
   padding-top: 70px;
   padding-bottom: 20px;
 }
+```
+and
+
+```html
+<link rel="stylesheet" href="styles/main.css">
 ```
 
 ## Routing configuration
@@ -212,7 +217,6 @@ Define the area to display the component
   }
 })();
 ```
-
 
 ## Todos
 
