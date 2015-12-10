@@ -187,12 +187,9 @@ inputタグに対してもAngularJSはいろいろなディレクティブを用
 
 少し面白いディレクティブに ng-copy、ng-paste、ng-cutといったディレクティブがあります。
 ```html
-  <body ng-app>
-    <input ng-paste="paste=true" ng-init="paste=false" placeholder='paste here'>pasted: {{paste}}<br>
-    <input ng-copy="copied=true" ng-init="copied=false; copyvalue='copy me'" ng-model="copyvalue">copied: {{copied}}<br>
-    <input ng-cut="cut=true" ng-init="cut=false; cutvalue='cut me'" ng-model="cutvalue">cut: {{cut}}<br>
-    <script src="bower_components/angular/angular.js"></script>
-  </body>
+<input ng-paste="paste=true" ng-init="paste=false" placeholder='paste here'>pasted: {{paste}}<br>
+<input ng-copy="copied=true" ng-init="copied=false; copyvalue='copy me'" ng-model="copyvalue">copied: {{copied}}<br>
+<input ng-cut="cut=true" ng-init="cut=false; cutvalue='cut me'" ng-model="cutvalue">cut: {{cut}}
 ```
 こうしたキー操作（ng-keydown、ng-keypress、ng-keyupなど）やマウス操作（ng-mousedown、ng-mousemove、ng-mouseoverなど）様々なディレクティブが用意されています。
 
@@ -212,9 +209,6 @@ header.html の中身は
 ```
 としましょう。これを ng-include で取り込みます。bodyタグの下に
 ```html
-  <body ng-app>
-    <div ng-include="'header.html'"></div>
-    <script src="bower_components/angular/angular.js" ></script>
-  </body>
+<div ng-include="'header.html'"></div>
 ```
 と記載してください。うまくタイトルが表示されます。
