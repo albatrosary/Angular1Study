@@ -19,7 +19,7 @@ HTML
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>Angular1 Study</title>
@@ -37,7 +37,7 @@ or
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>Angular1 Study</title>
