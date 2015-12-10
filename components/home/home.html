@@ -1,1 +1,8 @@
-<h1>home</h1>
+<h2>home</h2>
+<hr>
+<div class="col-lg-6" ng-repeat="data in home.list">
+  <div class="card card-block">
+    <h4 class="card-title">{{data.name}}</h4>
+    <p class="card-text">{{data.note}}</p>
+  </div>
+</div>

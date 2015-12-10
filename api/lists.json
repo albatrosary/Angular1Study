@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Angular",
+    "note": "HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop."
+  },
+  {
+    "name": "Bootstrap",
+    "note": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development."
+  }
+]
