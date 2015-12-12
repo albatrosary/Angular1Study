@@ -5,59 +5,70 @@
 ### Use npm
 
 ```bash
-npm install jquery bootstrap angular-resource@1.5.0-beta.2 angular-route@1.5.0-beta.2 --save 
+npm install angular-ui-router --save 
 ```
 
-HTML
+### Rewrite HTML
 
+before
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Angular1 Study</title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-</head>
-<body ng-app="TodoApp">
-  <!-- contents -->
-  
-  <!-- package -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="node_modules/angular/angular.min.js"></script>
-  <script src="node_modules/angular-route/angular-route.min.js"></script>
-  <script src="node_modules/angular-resource/angular-resource.min.js"></script>
-  
-  <!-- module -->
-  
-</body>
-</html>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
 ```
 
-or
-
-### Use CDN
-
+after
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Angular1 Study</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-<body ng-app="TodoApp">
-  <!-- contents -->
-  
-  <!-- package -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-route.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-resource.min.js"></script>
-  
-  <!-- module -->
-  
-</body>
-</html>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+```
+### ngRoute Directive
+
+before
+```html
+<div class="container">
+  <div ng-view></div>
+</div>
+``
+
+after
+```html
+<div class="container">
+  <div ui-view></div>
+</div>
+``
+
+### ngHref Directive
+
+before
+```html
+<li><a ng-href="#/home">Home</a></li>
+<li><a ng-href="#/todo">Todo</a></li>
+```
+
+after
+```html
+<a ui-sref="home">Home</a>
+<a ui-sref="tofo">Todo</a>
+```
+
+### Routing Config
+
+Change a $routeProvider to $stateProvider
+
+before
+```javascript
+$routeProvider
+  .when('/', {
+    templateUrl: 'components/home/home.html',
+    controller: 'HomeController as home'
+  })
+```
+
+after
+```javascript
+$stateProvider
+  .state('home', {
+    url: "/",
+    templateUrl: "components/home/home.html"
+    controller: 'HomeController',
+    controllerAs: 'home'
+  })
 ```
