@@ -22,7 +22,7 @@ mkdir SampleApp && cd $_
 
 ```bash
 npm init -y
-npm install angular@1.5.0-beta.2 --save
+npm install angular@1.5.0-rc.0 --save
 ```
 
 HTML
@@ -54,7 +54,7 @@ or
 </head>
 <body ng-app>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
 </body>
 </html>
 ```
