@@ -81,6 +81,12 @@ http-server
 ruby -run -e httpd -- -p 8000 
 ```
 
+or
+
+```bash
+ruby -rwebrick -e 'WEBrick::HTTPServer.new(:DocumentRoot => "./", :Port => 8000).start'
+```
+
 ### Python
 
 ```bash
