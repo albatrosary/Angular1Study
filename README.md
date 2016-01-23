@@ -87,7 +87,7 @@ or
 ruby -rwebrick -e 'WEBrick::HTTPServer.new(:DocumentRoot => "./", :Port => 8000).start'
 ```
 
-### Python
+### Python 2系
 
 ```bash
 python -m SimpleHTTPServer
