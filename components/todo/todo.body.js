@@ -10,8 +10,6 @@
         list: '='
       }
     });
-
-  Controller.$inject = [];
   
   var ctrl;
 

@@ -11,8 +11,6 @@
       }
     });
 
-  Controller.$inject = [];
-
   var ctrl;
 
   function Controller() {
