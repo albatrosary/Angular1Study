@@ -55,6 +55,7 @@ The data you want to receive the data, is defined as onDelete the Delete event.
 ## Change todo.body
 
 Using the interface defined in detail and item iterator parameters.
+onDelete defined in todo.detail.js is described as on-delete.
 
 (components/todo/todo.body.html)
 ```html
