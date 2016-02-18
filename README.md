@@ -46,7 +46,7 @@ before
 after
 ```html
 <a ui-sref="home">Home</a>
-<a ui-sref="tofo">Todo</a>
+<a ui-sref="todo">Todo</a>
 ```
 
 ### Routing Config
