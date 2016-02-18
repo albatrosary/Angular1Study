@@ -12,5 +12,6 @@
 
   function Controller() {
     console.log('Todo Controller Constructor');
+    this.todolist = [];
   }
 })();
