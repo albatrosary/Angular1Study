@@ -18,9 +18,7 @@
   ListsService.$inject = ['$resource'];
 
   function ListsService($resource) {
-    return $resource('/api/lists.json', {
-      'query': {}
-    });
+    return $resource('/api/lists.json');
   }
 })();
 ```
