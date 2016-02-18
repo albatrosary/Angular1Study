@@ -30,14 +30,14 @@ before
 <div class="container">
   <div ui-view></div>
 </div>
-``
+```
 
 after
 ```html
 <div class="container">
   <div ng-outlet></div>
 </div>
-``
+```
 
 ### ngHref Directive
 
