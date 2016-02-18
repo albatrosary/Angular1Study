@@ -2,13 +2,13 @@
 
 Branch
 * master: Install essential libraries
-* step2: Directive
-* step3: Install essential other libraries
-* step4: Routing(ngRoute)
-* step5: Todos
-* step6: Ajax
-* step7: Routing(ui-router)
-* step8: Component Router
+* Step2: Directive
+* Step3: Install essential other libraries
+* Step4: Routing(ngRoute)
+* Step5: Todos
+* Step6: Ajax
+* Step7: Routing(ui-router)
+* Step8: Component Router
 * Step9: Component Todos
 * Step10: Components of the todoDetail
 
