@@ -73,8 +73,6 @@ And coding each referring to the TodoApp.
       templateUrl: 'components/todo/todo.body.html'
     });
 
-  Controller.$inject = [];
-
   function Controller() {
     console.log('Todo body Controller Constructor');
   }
@@ -104,8 +102,6 @@ And coding each referring to the TodoApp.
       controller: Controller,
       templateUrl: 'components/todo/todo.head.html'
     });
-
-  Controller.$inject = [];
 
   function Controller() {
     console.log('Todo head Controller Constructor');
