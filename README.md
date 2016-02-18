@@ -21,7 +21,7 @@ todo.detail.html defines the contents of the iterator.
 <p class="input-group">
   <input type="text" ng-model="$ctrl.data" class="form-control">
   <span class="input-group-btn">
-    <button class="btn btn-danger" ng-click="$ctrl.removeTodo($index)" aria-label="Remove">X</button>
+    <button class="btn btn-danger" ng-click="$ctrl.onDelete($index)" aria-label="Remove">X</button>
   </span>
 </p>
 ```
@@ -58,7 +58,9 @@ Using the interface defined in detail and item iterator parameters.
 
 (components/todo/todo.body.html)
 ```html
-<todo-detail ng-repeat="item in $ctrl.list track by $index"
-data="item"
-on-delete="$ctrl.removeTodo($index)"></todo-detail>
+<div>
+  <todo-detail ng-repeat="item in $ctrl.list track by $index"
+  data="item"
+  on-delete="$ctrl.removeTodo($index)"></todo-detail>
+</div>
 ```
