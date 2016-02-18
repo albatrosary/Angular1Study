@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/albatrosary/Angular1Study#readme",
   "dependencies": {
-    "angular": "^1.5.0-beta.2",
-    "angular-resource": "^1.5.0-beta.2",
-    "angular-ui-router": "^0.2.15",
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
     "bootstrap": "^3.3.6",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "ngcomponentrouter": "^1.4.1"
   },
   "devDependencies": {
     "live-server": "^0.8.2"

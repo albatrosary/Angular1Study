@@ -3,11 +3,14 @@
 
   angular
     .module('TodoApp.components.home', [])
-    .controller('HomeController', HomeController);
+    .component('home', {
+      controller: Controller,
+      templateUrl: 'components/home/home.html'
+    });
 
-  HomeController.$inject = [];
+  Controller.$inject = [];
 
-  function HomeController() {
-    console.log('HomeController Constructor');
+  function Controller() {
+    console.log('Home Controller Constructor');
   }
 })();

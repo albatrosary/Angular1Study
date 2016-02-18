@@ -3,27 +3,27 @@
 
   angular
     .module('TodoApp', [
-      'ui.router',
+      'ngComponentRouter',
       'TodoApp.components.home',
       'TodoApp.components.todo'
     ])
-    .config(AppConfig);
+    .controller('AppController', AppController);
 
-  AppConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+  AppController.$inject = ['$router'];
 
-  function AppConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: "/",
-        templateUrl: "components/home/home.html",
-        controller: 'HomeController as home'
-      })
-      .state('todo', {
-        url: "/todo",
-        templateUrl: "components/todo/todo.html",
-        controller: 'TodoController as todo'
-      });
-    $urlRouterProvider
-      .otherwise('/');
+  function AppController ($router) {
+    $router.config([
+      {
+        path: '/home',
+        name:'Home',
+        component: 'home',
+        useAsDefault: true
+      },
+      {
+        path: '/todo',
+        name:'Todo',
+        component: 'todo'
+      }
+    ]);
   }
 })();

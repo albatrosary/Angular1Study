@@ -3,11 +3,14 @@
 
   angular
     .module('TodoApp.components.todo', [])
-    .controller('TodoController', TodoController);
+    .component('todo', {
+      controller: Controller,
+      templateUrl: 'components/todo/todo.html'
+    });
 
-  TodoController.$inject = [];
+  Controller.$inject = [];
 
-  function TodoController() {
-    console.log('TodoController Constructor');
+  function Controller() {
+    console.log('Todo Controller Constructor');
   }
 })();
