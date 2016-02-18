@@ -9,6 +9,7 @@ Branch
 * step6: Ajax
 * step7: Routing(ui-router)
 * step8: Component Router
+* Step9: Component Todos
 
 ## Create a project folder
 
