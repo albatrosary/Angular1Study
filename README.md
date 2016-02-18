@@ -1,4 +1,4 @@
-# Angular1 Study - Step3: Install libraries
+# Angular1 Study - Step7: Routing(ui-router)
 
 ## Install essential other libraries
 
