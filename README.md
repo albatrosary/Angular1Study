@@ -1,4 +1,4 @@
-# Angular1 Study - Step9: Component Router
+# Angular1 Study - Step9: Component Todos
 
 TodoApp made with step5 rebuilds according to the Angular Component.
 
