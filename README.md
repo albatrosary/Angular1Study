@@ -1,4 +1,4 @@
-# Angular1 Study - Step5 Todos
+# Angular1 Study - Step5: Todos
 
 ## Todos
 
