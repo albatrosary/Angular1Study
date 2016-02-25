@@ -44,14 +44,10 @@ The data you want to receive the data, is defined as onDelete the Delete event.
   'use strict';
 
   angular
-    .module('TodoApp.components.todo')
-    .component('todoDetail', {
+    .module('TodoApp.components.rx')
+    .component('rx', {
       controller: Controller,
-      templateUrl: 'components/todo/todo.detail.html',
-      bindings:  {
-        data: '<',
-        onDelete: '&'
-      }
+      templateUrl: 'components/rx/rx.html'
     });
   
   var ctrl;
