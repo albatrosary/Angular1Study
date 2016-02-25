@@ -23,6 +23,8 @@ mkdir SampleApp && cd $_
 ```
 >>>>>>> origin
 
+see:[Reactive-Extensions](https://github.com/Reactive-Extensions/RxJS)
+
 ## Install essential libraries
 
 ```bash
