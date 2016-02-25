@@ -1,3 +1,4 @@
+/* global angular */
 (function () {
   'use strict';
 
@@ -11,39 +12,38 @@
   Controller.$inject = ['$http', 'rx'];
   
   var ctrl;
+  
+  function searchWikipedia (term) {
+    var deferred = ctrl.$http({
+      url: "http://en.wikipedia.org/w/api.php?&callback=JSON_CALLBACK",
+      method: "jsonp",
+      params: {
+        action: "opensearch",
+        search: term,
+        format: "json"
+      }
+    });
 
+    return ctrl.rx.Observable
+      .fromPromise(deferred)
+      .map(function(response){ return response.data[1]; });
+  }
+  
   function Controller($http, rx) {
     console.log('Todo detail Controller Constructor');
+    
+    this.$http = $http;
+    this.rx = rx;
+    
     ctrl = this;
-
-    function searchWikipedia (term) {
-      var deferred = $http({
-        url: "http://en.wikipedia.org/w/api.php?&callback=JSON_CALLBACK",
-        method: "jsonp",
-        params: {
-          action: "opensearch",
-          search: term,
-          format: "json"
-        }
-      });
-
-      return rx.Observable
-        .fromPromise(deferred)
-        .map(function(response){ return response.data[1]; });
-    }
-
+    
     ctrl.search = '';
     ctrl.results = [];
-
-    /*
-        The following code deals with:
-        Creates a "submit" function which is an observable sequence instead of just a function.
-    */
+    
     rx.createObservableFunction(ctrl, 'submit')
       .map(function (term) { return term; })
       .flatMapLatest(searchWikipedia)
-      .subscribe(function(results) {
-        ctrl.results = results;
-      }.bind(ctrl));
-    }
+      .subscribe(results => {ctrl.results = results;});
+  }
+ 
 })();
