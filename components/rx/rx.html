@@ -1,8 +1,6 @@
-<form ng-submit="$ctrl.submit($ctrl.search)">
-  <h2>Reactive Angular - Wikipedia Example</h2>
-  <input type="text" ng-model="$ctrl.search">
-  <button>Search</button>
-</form>
+<h2>Reactive Angular - Wikipedia Example</h2>
+<input type="text" ng-model="$ctrl.search">
+<button ng-click="$ctrl.submit($ctrl.search)">Search</button>
 
 <ul>
   <li ng-repeat="result in $ctrl.results">

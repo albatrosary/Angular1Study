@@ -9,9 +9,28 @@
       templateUrl: 'components/rx/rx.html'
     });
 
-  Controller.$inject = ['$http', 'rx'];
+  Controller.$inject = ['$rootScope', '$http', 'rx'];
   
+  function Controller($rootScope, $http, rx) {
+    console.log('Todo detail Controller Constructor');
+    ctrl = this;
+    ctrl.$rootScope = $rootScope;
+    ctrl.$http = $http;
+    ctrl.rx = rx;
+    ctrl.search = '';
+    ctrl.results = [];
+  }
+ 
   var ctrl;
+  
+  Controller.prototype.$onInit = function() {
+    console.log('onInit()');
+
+    ctrl.rx.createObservableFunction(ctrl, 'submit')
+      .map(term => term)
+      .flatMapLatest(searchWikipedia)
+      .subscribe(results => {ctrl.$rootScope.$apply(ctrl.results = results);});
+  }
   
   function searchWikipedia (term) {
     var deferred = ctrl.$http({
@@ -26,24 +45,6 @@
 
     return ctrl.rx.Observable
       .fromPromise(deferred)
-      .map(function(response){ return response.data[1]; });
+      .map(response => response.data[1]);
   }
-  
-  function Controller($http, rx) {
-    console.log('Todo detail Controller Constructor');
-    
-    this.$http = $http;
-    this.rx = rx;
-    
-    ctrl = this;
-    
-    ctrl.search = '';
-    ctrl.results = [];
-    
-    rx.createObservableFunction(ctrl, 'submit')
-      .map(function (term) { return term; })
-      .flatMapLatest(searchWikipedia)
-      .subscribe(results => {ctrl.results = results;});
-  }
- 
 })();
