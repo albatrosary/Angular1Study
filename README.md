@@ -2,14 +2,18 @@
 
 ## Install essential libraries
 
+```bash
+npm install rx-angular --save
+```
+
 ## add files
 
 TodoApp is made from two parts.
 It is head and body.
 
 ```bash
-components/todo/todo.detail.html
-components/todo/todo.detail.js
+components/rx/rx.html
+components/rx/rx.js
 ```
 
 ## HTML and JavaScript
@@ -18,7 +22,7 @@ And coding each referring to the TodoApp.
 
 todo.detail.html defines the contents of the iterator.
 
-(components/todo/todo.detail.html)
+(components/rx/rx.html)
 ```html
 <p class="input-group">
   <input type="text" ng-model="$ctrl.data" class="form-control">
