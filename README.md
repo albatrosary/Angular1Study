@@ -10,9 +10,6 @@ npm install rx-angular --save
 
 ## add files
 
-TodoApp is made from two parts.
-It is head and body.
-
 ```bash
 components/rx/rx.html
 components/rx/rx.js
