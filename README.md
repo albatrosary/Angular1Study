@@ -11,6 +11,7 @@ Branch
 * Step8: Component Router
 * Step9: Component Todos
 * Step10: Components of the todoDetail
+* Step11: RxJS
 
 ## Create a project folder
 
