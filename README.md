@@ -1,4 +1,6 @@
-# Angular1 Study - Step10: Components of the todoDetail
+# Angular1 Study - Step11: RxJS
+
+## Install essential libraries
 
 ## add files
 
