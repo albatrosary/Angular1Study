@@ -1,27 +1,4 @@
-<<<<<<< HEAD
 # Angular1 Study - Step11: RxJS
-=======
-# Angular1 Study
-
-Branch
-* master: Install essential libraries
-* Step2: Directive
-* Step3: Install essential other libraries
-* Step4: Routing(ngRoute)
-* Step5: Todos
-* Step6: Ajax
-* Step7: Routing(ui-router)
-* Step8: Component Router
-* Step9: Component Todos
-* Step10: Components of the todoDetail
-* Step11: RxJS
-
-## Create a project folder
-
-```bash
-mkdir SampleApp && cd $_
-```
->>>>>>> origin
 
 see:[Reactive-Extensions](https://github.com/Reactive-Extensions/RxJS)
 
