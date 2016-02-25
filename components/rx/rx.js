@@ -21,9 +21,9 @@
         url: "http://en.wikipedia.org/w/api.php?&callback=JSON_CALLBACK",
         method: "jsonp",
         params: {
-            action: "opensearch",
-            search: term,
-            format: "json"
+          action: "opensearch",
+          search: term,
+          format: "json"
         }
       });
 
@@ -32,18 +32,18 @@
         .map(function(response){ return response.data[1]; });
     }
 
-    this.search = '';
-    this.results = [];
+    ctrl.search = '';
+    ctrl.results = [];
 
     /*
         The following code deals with:
         Creates a "submit" function which is an observable sequence instead of just a function.
     */
-    rx.createObservableFunction(this, 'submit')
+    rx.createObservableFunction(ctrl, 'submit')
       .map(function (term) { return term; })
       .flatMapLatest(searchWikipedia)
       .subscribe(function(results) {
-          this.results = results;
-      }.bind(this));
+        ctrl.results = results;
+      }.bind(ctrl));
     }
 })();
