@@ -24,16 +24,21 @@ todo.detail.html defines the contents of the iterator.
 
 (components/rx/rx.html)
 ```html
-<p class="input-group">
-  <input type="text" ng-model="$ctrl.data" class="form-control">
-  <span class="input-group-btn">
-    <button class="btn btn-danger" ng-click="$ctrl.removeTodo($index)" aria-label="Remove">X</button>
-  </span>
-</p>
+<form ng-submit="$ctrl.submit($ctrl.search)">
+  <h2>Reactive Angular - Wikipedia Example</h2>
+  <input type="text" ng-model="$ctrl.search">
+  <button>Search</button>
+</form>
+
+<ul>
+  <li ng-repeat="result in $ctrl.results">
+    {{ result }}
+  </li>
+</ul>
 ```
 The data you want to receive the data, is defined as onDelete the Delete event.
 
-(components/todo/todo.detail.js)
+(components/rx/rx.js)
 ```javascript
 (function () {
   'use strict';
@@ -54,17 +59,37 @@ The data you want to receive the data, is defined as onDelete the Delete event.
   function Controller() {
     console.log('Todo detail Controller Constructor');
     ctrl = this;
-  }
+    
+    function searchWikipedia (term) {
+      var deferred = $http({
+        url: "http://en.wikipedia.org/w/api.php?&callback=JSON_CALLBACK",
+        method: "jsonp",
+        params: {
+            action: "opensearch",
+            search: term,
+            format: "json"
+        }
+      });
+
+      return rx.Observable
+        .fromPromise(deferred)
+        .map(function(response){ return response.data[1]; });
+    }
+
+    this.search = '';
+    this.results = [];
+  
+    /*
+        The following code deals with:
+        Creates a "submit" function which is an observable sequence instead of just a function.
+    */
+    rx.createObservableFunction(this, 'submit')
+      .map(function (term) { return term; })
+      .flatMapLatest(searchWikipedia)
+      .subscribe(function(results) {
+          this.results = results;
+      }.bind(this));
+    }
 })();
 ```
 
-## Change todo.body
-
-Using the interface defined in detail and item iterator parameters.
-
-(components/todo/todo.body.html)
-```html
-<todo-detail ng-repeat="item in $ctrl.list track by $index"
-data="item"
-on-delete="$ctrl.removeTodo($index)"></todo-detail>
-```
