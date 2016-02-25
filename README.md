@@ -1,5 +1,7 @@
 # Angular1 Study - Step11: RxJS
 
+see:[Reactive-Extensions](https://github.com/Reactive-Extensions/RxJS)
+
 ## Install essential libraries
 
 ```bash
