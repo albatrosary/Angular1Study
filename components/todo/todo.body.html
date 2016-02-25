@@ -1,0 +1,5 @@
+<div>
+  <todo-detail ng-repeat="item in $ctrl.list track by $index"
+  data="item"
+  on-delete="$ctrl.removeTodo($index)"></todo-detail>
+</div>

@@ -1,41 +1,3 @@
-# Angular1 Study - Step11: RxJS
-
-## Install essential libraries
-
-```bash
-npm install rx-angular --save
-```
-
-## add files
-
-TodoApp is made from two parts.
-It is head and body.
-
-```bash
-components/rx/rx.html
-components/rx/rx.js
-```
-
-## HTML and JavaScript
-
-(components/rx/rx.html)
-```html
-<form ng-submit="$ctrl.submit($ctrl.search)">
-  <h2>Reactive Angular - Wikipedia Example</h2>
-  <input type="text" ng-model="$ctrl.search">
-  <button>Search</button>
-</form>
-
-<ul>
-  <li ng-repeat="result in $ctrl.results">
-    {{ result }}
-  </li>
-</ul>
-```
-The data you want to receive the data, is defined as onDelete the Delete event.
-
-(components/rx/rx.js)
-```javascript
 (function () {
   'use strict';
 
@@ -73,6 +35,10 @@ The data you want to receive the data, is defined as onDelete the Delete event.
     this.search = '';
     this.results = [];
 
+    /*
+        The following code deals with:
+        Creates a "submit" function which is an observable sequence instead of just a function.
+    */
     rx.createObservableFunction(this, 'submit')
       .map(function (term) { return term; })
       .flatMapLatest(searchWikipedia)
@@ -81,5 +47,3 @@ The data you want to receive the data, is defined as onDelete the Delete event.
       }.bind(this));
     }
 })();
-```
-

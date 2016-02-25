@@ -3,9 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Angular1 Study</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
-<body ng-app>
-  {{1+1}}
-  <script src="node_modules/angular/angular.js"></script>
+<body ng-app="TodoApp" ng-controller="AppController as app">
+  <!-- contents -->
+  <div ng-include="'components/header/header.html'"></div>
+  <div class="container">
+    <div ng-outlet></div>
+  </div>
+  
+  <!-- package -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/ngcomponentrouter/angular_1_router.js"></script>
+  <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+  <script src="node_modules/rx/dist/rx.all.js"></script>
+  <script src="node_modules/rx-angular/dist/rx.angular.js"></script>
+  
+  <!-- module -->
+  <script src="scripts/main.js"></script>
+  <script src="components/home/home.js"></script>
+  <script src="components/todo/todo.js"></script>
+  <script src="components/todo/todo.head.js"></script>
+  <script src="components/todo/todo.body.js"></script>
+  <script src="components/todo/todo.detail.js"></script>
+  <script src="components/rx/rx.js"></script>
 </body>
 </html>
