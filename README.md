@@ -35,50 +35,29 @@ The data you want to receive the data, is defined as onDelete the Delete event.
 
 (components/rx/rx.js)
 ```javascript
-(function () {
-  'use strict';
+Controller.prototype.$onInit = function() {
+  console.log('onInit()');
 
-  angular
-    .module('TodoApp.components.rx', ['rx'])
-    .component('rx', {
-      controller: Controller,
-      templateUrl: 'components/rx/rx.html'
-    });
+  ctrl.rx.createObservableFunction(ctrl, 'submit')
+    .map(term => term)
+    .flatMapLatest(searchWikipedia)
+    .subscribe(results => {ctrl.$rootScope.$apply(ctrl.results = results);});
+}
 
-  Controller.$inject = ['$http', 'rx'];
-  
-  var ctrl;
-
-  function Controller($http, rx) {
-    console.log('Todo detail Controller Constructor');
-    ctrl = this;
-
-    function searchWikipedia (term) {
-      var deferred = $http({
-        url: "http://en.wikipedia.org/w/api.php?&callback=JSON_CALLBACK",
-        method: "jsonp",
-        params: {
-            action: "opensearch",
-            search: term,
-            format: "json"
-        }
-      });
-
-      return rx.Observable
-        .fromPromise(deferred)
-        .map(function(response){ return response.data[1]; });
+function searchWikipedia (term) {
+  var deferred = ctrl.$http({
+    url: "http://en.wikipedia.org/w/api.php?&callback=JSON_CALLBACK",
+    method: "jsonp",
+    params: {
+      action: "opensearch",
+      search: term,
+      format: "json"
     }
+  });
 
-    this.search = '';
-    this.results = [];
-
-    rx.createObservableFunction(this, 'submit')
-      .map(function (term) { return term; })
-      .flatMapLatest(searchWikipedia)
-      .subscribe(function(results) {
-          this.results = results;
-      }.bind(this));
-    }
-})();
+  return ctrl.rx.Observable
+    .fromPromise(deferred)
+    .map(response => response.data[1]);
+}
 ```
 
