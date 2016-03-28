@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/albatrosary/Angular1Study#readme",
   "dependencies": {
-    "angular": "^1.5.0",
-    "angular-resource": "^1.5.0",
+    "angular": "^1.5.3",
+    "angular-resource": "^1.5.3",
     "bootstrap": "^3.3.6",
     "jquery": "^2.1.4",
-    "ngcomponentrouter": "^1.4.1",
+    "ngcomponentrouter": "^2.0.0",
     "rx-angular": "^1.1.3"
   },
   "devDependencies": {
