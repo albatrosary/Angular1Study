@@ -26,14 +26,14 @@ before
 <div class="container">
   <div ng-view></div>
 </div>
-``
+```
 
 after
 ```html
 <div class="container">
   <div ui-view></div>
 </div>
-``
+```
 
 ### ngHref Directive
 
