@@ -8,7 +8,7 @@ Component Router of Angular is ngComponetRouter.
 ### Use npm
 
 ```bash
-npm install ngComponentRouter --save 
+npm install ngcomponentrouter --save 
 ```
 
 ### Rewrite HTML
